@@ -2,7 +2,8 @@ require 'pry'
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new(post: @post)
+    @user = User.new
+    @comment = Comment.new(post: @post, user: @user)
   end
 
   def index
